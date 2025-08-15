@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Blocker</title>
+  <style>
+    :root { --bg:#f7f8fa; --card:#fff; --text:#222; --muted:#6b7280; --brand:#2563eb; --brandH:#1d4ed8; --danger:#dc2626; }
+    body { font-family: ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; width:320px; background:var(--bg); color:var(--text); }
+    .wrap { padding:14px; }
+    h2 { margin:0 0 10px; font-size:16px; }
+    .card { background:var(--card); border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.06); padding:12px; }
+    .row { display:flex; gap:8px; }
+    input, button { font-size:14px; padding:8px; border-radius:10px; border:1px solid #e5e7eb; }
+    input[type="number"]{ width:110px; }
+    button { background:var(--brand); color:#fff; border:none; cursor:pointer; }
+    button:hover{ background:var(--brandH); }
+    ul { list-style:none; padding:0; margin:10px 0 0; max-height:220px; overflow:auto; }
+    li { display:flex; align-items:center; justify-content:space-between; gap:10px; background:#fff; border:1px solid #eef; padding:8px 10px; border-radius:10px; margin-bottom:8px; }
+    .site { font-weight:600; }
+    .mins { color:var(--muted); }
+    .del { background:var(--danger); color:#fff; border:none; border-radius:10px; padding:6px 10px; cursor:pointer; }
+    .del:hover { background:#b91c1c; }
+    .feedback { min-height:18px; margin-top:8px; font-size:12px; font-weight:600; }
+    .footer { text-align:center; margin-top:6px; }
+    .footer a { text-decoration:none; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>Quick Add</h2>
+    <div class="card">
+      <div class="row">
+        <input id="siteInput" placeholder="e.g. youtube.com" />
+        <input id="timeInput" type="number" min="1" placeholder="Minutes" />
+        <button id="addBtn">Add</button>
+      </div>
+      <div id="feedback" class="feedback"></div>
+    </div>
+
+    <h2 style="margin-top:14px">Tracked Sites</h2>
+    <ul id="siteList"></ul>
+
+    <div class="footer">
+      <a href="options.html" target="_blank">Open full settings</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
